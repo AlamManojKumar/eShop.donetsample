@@ -1,4 +1,4 @@
-name: .NET Build
+name: .NET CIWorkflow
 
 on:
   push:
@@ -18,12 +18,13 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x' 
+    - name: Debug files
+      run: ls -R
     - name: Restore dependencies
-      run: dotnet restore src/Web/Web.csproj
+      run: dotnet restore 
     - name: Build
-      run: dotnet build src/Web/Web.csproj --no-restore
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test eshop.sln --no-build --verbosity normal
-
-    - name: Run tests
       run: dotnet test --no-build --verbosity normal
+
+    
