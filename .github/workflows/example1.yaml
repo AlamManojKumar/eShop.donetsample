@@ -17,11 +17,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'   # change version if needed
-
-
+        dotnet-version: '8.0.x' 
+    - name: Restore dependencies
+      run: dotnet restore src/Web/Web.csproj
     - name: Build
-      run: dotnet build --configuration Release 
+      run: dotnet build src/Web/Web.csproj --no-restore
+    - name: Test
+      run: dotnet test eshop.sln --no-build --verbosity normal
 
     - name: Run tests
       run: dotnet test --no-build --verbosity normal
