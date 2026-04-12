@@ -24,8 +24,10 @@ jobs:
       run: dotnet build eShop.slnx --configuration Release      
     - name: Test
       run: |
-        dotnet test tests/Basket.UnitTests/Basket.UnitTests.csproj --configuration Release --no-build --verbosity normal
-        dotnet test tests/Ordering.UnitTests/Ordering.UnitTests.csproj --configuration Release --no-build --verbosity normal
+        dotnet test --project tests/Basket.UnitTests/Basket.UnitTests.csproj --configuration Release --no-build --verbosity normal
+        dotnet test --project tests/Ordering.UnitTests/Ordering.UnitTests.csproj --configuration Release --no-build --verbosity normal
+        
+        
   
 
     
