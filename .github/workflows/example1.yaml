@@ -23,6 +23,8 @@ jobs:
     - name: Build
       run: dotnet build eShop.slnx --configuration Release      
     - name: Test
-      run: dotnet test eShop.Web.slnf --verbosity normal
+      run: |
+        dotnet test tests/Basket.UnitTests --configuration Release --no-build --verbosity normal
+        dotnet test tests/Ordering.UnitTests --configuration Release --no-build --verbosity normal
 
     
