@@ -19,9 +19,9 @@ jobs:
     - name: Install MAUI workload
       run: dotnet workload install maui 
     - name: Restore dependencies
-      run: dotnet restore eShop.Web.slnf /p:EnableiOSWorkload=false
+      run: dotnet restore eShop.slnx 
     - name: Build
-      run: dotnet build eShop.Web.slnf --configuration Release /p:EnableiOSWorkload=false /p:EnableMacCatalystWorkload=false      
+      run: dotnet build eShop.slnx --configuration Release      
     - name: Test
       run: dotnet test eShop.Web.slnf --verbosity normal
 
