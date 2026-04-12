@@ -23,6 +23,6 @@ jobs:
     - name: Build
       run: dotnet build eShop.Web.slnf --configuration Release /p:EnableiOSWorkload=false /p:EnableMacCatalystWorkload=false      
     - name: Test
-      run: dotnet test --no-build --verbosity normal 
+      run: dotnet test eShop.Web.slnf --verbosity normal
 
     
